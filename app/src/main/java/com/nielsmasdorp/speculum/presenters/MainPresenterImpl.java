@@ -218,7 +218,7 @@ public class MainPresenterImpl implements MainPresenter, RecognitionListener, Te
         if (mode.equals(Constants.KWS_SEARCH)) {
             recognizer.startListening(mode);
         } else {
-            recognizer.startListening(mode, (int) TimeUnit.MINUTES.toMillis(1));
+            recognizer.startListening(mode, (int) TimeUnit.SECONDS.toMillis(5));
         }
     }
 
