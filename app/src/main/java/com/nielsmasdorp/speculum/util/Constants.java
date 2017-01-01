@@ -50,8 +50,8 @@ public class Constants {
     /**
      * Formats
      */
-    public static final String SIMPLEDATEFORMAT_DDMMYY = "dd/MM/yy";
-    public static final String SIMPLEDATEFORMAT_HHMMSSDDMMYY = "hh:mm:ss dd/MM/yy";
+    public static final String SIMPLEDATEFORMAT_DDMMYY = "MM/dd/yy";
+    public static final String SIMPLEDATEFORMAT_HHMMSSDDMMYY = "hh:mm:ss MM/dd/yy";
     public static final String END_OF_DAY_TIME = "23:59:59 ";
 
     /**

@@ -63,8 +63,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:fontFamily="sans-serif-thin"
-            android:format12Hour="dd MMM yyyy"
-            android:format24Hour="dd MMM yyyy"
+            android:format12Hour="MMM d yyyy"
+            android:format24Hour="MMM d yyyy"
             android:textColor="@color/white"
             android:textSize="82sp"/>
 
