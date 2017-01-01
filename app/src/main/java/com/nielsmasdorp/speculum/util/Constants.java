@@ -74,11 +74,12 @@ public class Constants {
      */
     public static final String KWS_SEARCH = "wakeup";
     public static final String COMMANDS_SEARCH = "commands";
-    public static final String KEYPHRASE = "hello magic mirror";
-    public static final String UPDATE_PHRASE = "update";
-    public static final String JOKE_PHRASE = "tell me a joke";
-    public static final String SLEEP_PHRASE = "go to sleep";
-    public static final String MAP_PHRASE = "show my location";
+    public static final String KEYPHRASE = "hello pokedex";
+    public static final String POKEMON_PHRASE = "tell me a pokemon";
+//    public static final String UPDATE_PHRASE = "update";
+//    public static final String JOKE_PHRASE = "tell me a joke";
+//    public static final String SLEEP_PHRASE = "go to sleep";
+//    public static final String MAP_PHRASE = "show my location";
 
     /**
      * TTS phrases

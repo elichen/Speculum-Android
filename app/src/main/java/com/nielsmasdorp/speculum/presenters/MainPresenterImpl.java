@@ -19,6 +19,7 @@ import com.nielsmasdorp.speculum.views.MainView;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import edu.cmu.pocketsphinx.Hypothesis;
@@ -228,24 +229,32 @@ public class MainPresenterImpl implements MainPresenter, RecognitionListener, Te
                 setListeningMode(Constants.COMMANDS_SEARCH);
                 view.showListening();
                 break;
-            case Constants.SLEEP_PHRASE:
-                speak(Constants.SLEEP_NOTIFICATION);
-                setListeningMode(Constants.KWS_SEARCH);
-                view.hideListening();
-                break;
-            case Constants.UPDATE_PHRASE:
-                speak(Constants.UPDATE_NOTIFICATION);
+//            case Constants.SLEEP_PHRASE:
+//                speak(Constants.SLEEP_NOTIFICATION);
+//                setListeningMode(Constants.KWS_SEARCH);
+//                view.hideListening();
+//                break;
+//            case Constants.UPDATE_PHRASE:
+//                speak(Constants.UPDATE_NOTIFICATION);
+//                setListeningMode(Constants.COMMANDS_SEARCH);
+//                updateData();
+//                break;
+//            case Constants.JOKE_PHRASE:
+//                interactor.loadYoMommaJoke(new YoMammaJokeSubscriber());
+//                setListeningMode(Constants.COMMANDS_SEARCH);
+//                break;
+//            case Constants.MAP_PHRASE:
+//                speak(Constants.MAP_NOTIFICATION);
+//                setListeningMode(Constants.COMMANDS_SEARCH);
+//                showMap();
+//                break;
+            case Constants.POKEMON_PHRASE:
+                String[] pokemon = {
+                        "BULBASAUR", "IVYSAUR", "VENUSAUR", "CHARMANDER", "CHARMELEON", "CHARIZARD", "SQUIRTLE", "WARTORTLE", "BLASTOISE", "CATERPIE", "METAPOD", "BUTTERFREE", "WEEDLE", "KAKUNA", "BEEDRILL", "PIDGEY", "PIDGEOTTO", "PIDGEOT", "RATTATA", "RATICATE", "SPEAROW", "FEAROW", "EKANS", "ARBOK", "PIKACHU", "RAICHU", "SANDSHREW", "SANDSLASH", "NIDORAN", "NIDORINA", "NIDOQUEEN", "NIDORAN", "NIDORINO", "NIDOKING", "CLEFAIRY", "CLEFABLE", "VULPIX", "NINETALES", "JIGGLYPUFF", "WIGGLYTUFF", "ZUBAT", "GOLBAT", "ODDISH", "GLOOM", "VILEPLUME", "PARAS", "PARASECT", "VENONAT", "VENOMOTH", "DIGLETT", "DUGTRIO", "MEOWTH", "PERSIAN", "PSYDUCK", "GOLDUCK", "MANKEY", "PRIMEAPE", "GROWLITHE", "ARCANINE", "POLIWAG", "POLIWHIRL", "POLIWRATH", "ABRA", "KADABRA", "ALAKAZAM", "MACHOP", "MACHOKE", "MACHAMP", "BELLSPROUT", "WEEPINBELL", "VICTREEBEL", "TENTACOOL", "TENTACRUEL", "GEODUDE", "GRAVELER", "GOLEM", "PONYTA", "RAPIDASH", "SLOWPOKE", "SLOWBRO", "MAGNEMITE", "MAGNETON", "FARFETCHD", "DODUO", "DODRIO", "SEEL", "DEWGONG", "GRIMER", "MUK", "SHELLDER", "CLOYSTER", "GASTLY", "HAUNTER", "GENGAR", "ONIX", "DROWZEE", "HYPNO", "KRABBY", "KINGLER", "VOLTORB", "ELECTRODE", "EXEGGCUTE", "EXEGGUTOR", "CUBONE", "MAROWAK", "HITMONLEE", "HITMONCHAN", "LICKITUNG", "KOFFING", "WEEZING", "RHYHORN", "RHYDON", "CHANSEY", "TANGELA", "KANGASKHAN", "HORSEA", "SEADRA", "GOLDEEN", "SEAKING", "STARYU", "STARMIE", "MR_MIME", "SCYTHER", "JYNX", "ELECTABUZZ", "MAGMAR", "PINSIR", "TAUROS", "MAGIKARP", "GYARADOS", "LAPRAS", "DITTO", "EEVEE", "VAPOREON", "JOLTEON", "FLAREON", "PORYGON", "OMANYTE", "OMASTAR", "KABUTO", "KABUTOPS", "AERODACTYL", "SNORLAX", "ARTICUNO", "ZAPDOS", "MOLTRES", "DRATINI", "DRAGONAIR", "DRAGONITE", "MEWTWO", "MEW"
+                };
+                int i = new Random().nextInt(pokemon.length);
+                speak(pokemon[i]);
                 setListeningMode(Constants.COMMANDS_SEARCH);
-                updateData();
-                break;
-            case Constants.JOKE_PHRASE:
-                interactor.loadYoMommaJoke(new YoMammaJokeSubscriber());
-                setListeningMode(Constants.COMMANDS_SEARCH);
-                break;
-            case Constants.MAP_PHRASE:
-                speak(Constants.MAP_NOTIFICATION);
-                setListeningMode(Constants.COMMANDS_SEARCH);
-                showMap();
                 break;
         }
     }

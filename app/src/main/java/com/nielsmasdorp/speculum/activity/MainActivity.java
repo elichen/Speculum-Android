@@ -144,12 +144,21 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
     public void showListening() {
         ivListening.setVisibility(View.VISIBLE);
         ivListening.startAnimation(AnimationUtils.loadAnimation(this, R.anim.pulse));
+
+        WindowManager.LayoutParams params = getWindow().getAttributes();
+        params.screenBrightness = 1;
+        getWindow().setAttributes(params);
     }
 
     @Override
     public void hideListening() {
         ivListening.clearAnimation();
         ivListening.setVisibility(View.INVISIBLE);
+
+        WindowManager.LayoutParams params = getWindow().getAttributes();
+        params.flags |= WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON;
+        params.screenBrightness = 0;
+        getWindow().setAttributes(params);
     }
 
     @Override
