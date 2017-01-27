@@ -16,6 +16,9 @@ import com.nielsmasdorp.speculum.models.YoMommaJoke;
 import com.nielsmasdorp.speculum.util.Constants;
 import com.nielsmasdorp.speculum.views.MainView;
 
+import org.joda.time.DateTime;
+import org.joda.time.Interval;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
@@ -222,7 +225,19 @@ public class MainPresenterImpl implements MainPresenter, RecognitionListener, Te
         }
     }
 
+    private boolean checkAsleep() {
+        DateTime now = DateTime.now();
+        DateTime bedtime = now.withTime( 21, 0, 0, 0 );
+        DateTime risetime = bedtime.plusHours( 10 ); // 07:00 next morning.
+        Interval sleepInterval = new Interval( bedtime, risetime );
+        boolean asleep = sleepInterval.contains( now );
+
+        return asleep;
+    }
+
     private void processVoiceCommand(String command) {
+        if (checkAsleep()) return;
+
         switch (command) {
             case Constants.KEYPHRASE:
                 speak(Constants.WAKE_NOTIFICATION);
