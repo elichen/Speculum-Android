@@ -227,8 +227,8 @@ public class MainPresenterImpl implements MainPresenter, RecognitionListener, Te
 
     private boolean checkAsleep() {
         DateTime now = DateTime.now();
-        DateTime bedtime = now.withTime( 21, 0, 0, 0 );
-        DateTime risetime = bedtime.plusHours( 10 ); // 07:00 next morning.
+        DateTime bedtime = now.withTime( 20, 30, 0, 0 ); // 8:30pm
+        DateTime risetime = bedtime.plusHours( 11 ); // 07:30am next morning.
         Interval sleepInterval = new Interval( bedtime, risetime );
         boolean asleep = sleepInterval.contains( now );
 
@@ -236,7 +236,10 @@ public class MainPresenterImpl implements MainPresenter, RecognitionListener, Te
     }
 
     private void processVoiceCommand(String command) {
-        if (checkAsleep()) return;
+        if (checkAsleep()) {
+            setListeningMode(Constants.KWS_SEARCH);
+            return;
+        }
 
         switch (command) {
             case Constants.KEYPHRASE:
