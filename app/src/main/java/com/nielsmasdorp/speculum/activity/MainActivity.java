@@ -117,6 +117,8 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
             showConfigurationSnackbar();
 
         presenter.setConfiguration(configuration);
+
+        hideListening();
     }
 
     private void showConfigurationSnackbar() {
